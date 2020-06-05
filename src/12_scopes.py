@@ -6,6 +6,7 @@ x = 12
 
 def change_x():
     x = 99
+    return x
 
 change_x()
 
@@ -19,8 +20,8 @@ def outer():
     y = 120
 
     def inner():
+        nonlocal y 
         y = 999
-
     inner()
 
     # This prints 120. What do we have to change in inner() to get it to print

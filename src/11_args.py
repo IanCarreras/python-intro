@@ -3,7 +3,8 @@
 
 # Write a function f1 that takes two integer positional arguments and returns
 # the sum. This is what you'd consider to be a regular, normal function.
-
+def f1(a, b):
+    return a + b
 # YOUR CODE HERE
 
 print(f1(1, 2))
@@ -11,7 +12,11 @@ print(f1(1, 2))
 # Write a function f2 that takes any number of integer arguments and returns the
 # sum.
 # Note: Google for "python arbitrary arguments" and look for "*args"
-
+def f2(*args):
+    sum = 0
+    for num in args:
+        sum = sum + num
+    return sum
 # YOUR CODE HERE
 
 print(f2(1))                    # Should print 1
@@ -28,7 +33,11 @@ print(f2(a))    # Should print 22
 # it returns that value plus 1. If two arguments, it returns the sum of the
 # arguments.
 # Note: Google "python default arguments" for a hint.
-
+def f3(a, b = 0):
+    if b == 0:
+        return a + 1
+    elif b != 0:
+        return a + b
 # YOUR CODE HERE
 
 print(f3(1, 2))  # Should print 3
@@ -42,7 +51,9 @@ print(f3(8))     # Should print 9
 # key: baz, value: 12
 #
 # Note: Google "python keyword arguments".
-
+def f4(**kwargs):
+    for key, value in kwargs.items():
+        print(f'key: {key}, value: {value}')
 # YOUR CODE HERE
 
 # Should print
